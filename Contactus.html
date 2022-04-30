@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
+    <title>Hello, world!</title>
+	<style>
+	
+	input:disabled{
+	background-color:white; !important
+	}
+	
+	.sidenav a{
+		padding: 9px 15px;
+		font-size:15px;
+		}
+	
+		a:link { text-decoration: none; }
+		a:visited { text-decoration: none; }
+		a:hover { text-decoration: none; }
+		a:active { text-decoration: none; }	
+
+		.sidenav {
+  			display: none;
+  			height: 100%;
+  			width: 300px;
+  			position: fixed;
+		  	z-index: 1;
+		  	top: 0;
+		  	left: 0;
+			background-color: #111;
+			overflow-x: hidden;
+			padding-top: 60px;
+		}
+
+		.sidenav .a {
+	  		padding: 8px 8px 8px 32px;
+	  		text-decoration: none;
+	  		font-size: 25px;
+	  		color: #818181;
+	  		display: block;
+		}
+
+		.sidenav .a:hover {
+  			color: #f1f1f1;
+		}
+
+		.sidenav .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+
+		.mobile{
+			padding: 8px 8px 8px 32px;
+	  		font-size: 18px;
+	  		color: #818181;
+	  		display: none;
+		}
+
+		.mobile .a:hover{
+			color: #f1f1f1 !important;
+		}
+
+		@media (min-width: 768px){
+			.desktop .srch{
+				max-width: none !important;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			.mobile{
+				display: block;
+			}
+			.desktop{
+				display: none !important;
+			}
+			.img-fluid{
+				margin-right: 15px;
+				margin-left: auto;
+			}
+		}
+
+	.head-container{
+	background-image: url('https://almantasharealty.com/wp-content/uploads/2020/03/conatct-us.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+	
+	.fa-icon{
+	font-size: 50px;
+	}
+	
+	@media screen and (min-width: 600px){ 
+	.form-div{
+	padding-left: 150px!important; 
+	padding-right: 150px!important;
+	}
+	}
+	
+	
+	</style>
+  </head>
+  
+	
+	
+	<div class="d-flex align-items-center" style="background-color: #111;">
+		<span class="p-3" style="font-size: 30px;cursor: pointer; color: #f1f1f1" onclick="openNav()">&#9776;</span>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn a" onclick="closeNav()">&times;</a>
+			<a href="index.html" class="a">Home</a>
+			<a href="about.html" class="a">About</a>
+			<a href="projects.html" class="a">Our Projects</a>
+			<a href="Contactus.html" class="a">Contact Us</a>
+			
+			<form class="mobile">
+				<a href="c.html" style="color: #818181;" class="my-2 d-flex align-items-center"><i class="fa fa-user-circle fa-2x"></i></a>
+				<select class="col-10 my-2 py-1" id="citydrop">
+					<option value="The Heaven’s Palace">Thane</option>
+					<option value="The Universe">Dombivli</option>
+					<option value="Vista Valley">Kalyan</option>
+					<option value="Mountain Valley">Diva</option>
+					<option value="" disabled selected>Location...</option>
+				</select>
+				<select class="col-10 my-2 py-1">
+					<option value="1 RK">1 RK</option>
+					<option value="1-2 BHK">1-2 BHK</option>
+					<option value="3 BHK">3 BHK</option>
+					<option value="Buy" disabled selected>Buy...</option>
+				</select>
+				<div class="d-flex align-items-center my-2">
+					<input type="text" id="citytext" placeholder="Search Property" name="search">
+					<button type="submit" style="background-color: #FFC107; margin-left: 1px;"><i class="fa fa-search"></i></button>
+				</div>
+				<div class="my-3 d-flex align-items-center">
+					<a href="c.html" class="btn btn-primary mr-2">Post Property</a>
+				<a class="btn btn-primary ml-2" data-toggle="modal" data-target="#mymodel">Sign Up</a>
+				</div>
+			</form>
+		</div>
+		
+		
+
+		<a class="img-fluid" href="index.html">
+			<img src="logo.png" class="my-2">
+		</a>
+
+		<form class="desktop d-flex align-items-center mr-5 ml-auto">
+			<select class="col-md-2 py-1 mr-2" id="citydrop2">
+				<option value="The Heaven’s Palace">Thane</option>
+				<option value="The Universe">Dombivli</option>
+				<option value="Vista Valley">Kalyan</option>
+				<option value="Mountain Valley">Diva</option>
+				<option value="" disabled selected>Location...</option>
+			</select>
+			  <select class="col-md-2 py-1 ml-2">
+				<option value="1 RK">1 RK</option>
+				<option value="1-2 BHK">1-2 BHK</option>
+				<option value="3 BHK">3 BHK</option>
+				<option value="Buy" disabled selected>Buy...</option>
+			</select>
+			<div class="col-md-3 d-flex srch">
+				<input type="text" id="citytext2" placeholder="Search Property" name="search" disabled>
+				<button type="submit" style="background-color: #FFC107;"><i class="fa fa-search"></i></button>
+			</div>
+			<a href="#" style="color: #f1f1f1;"><i class="fa fa-user-circle fa-2x"></i></a>
+			<div class="col-md-5 d-flex">
+				<a href="c.html" class="btn btn-primary mr-2">Post Property</a>
+				<a class="btn btn-primary ml-2" data-toggle="modal" data-target="#mymodel">Sign Up</a>
+			</div>
+		</form>
+	</div>
+ 
+ 
+ 
+<div class="head-container p-5">
+<div class="container m-5">
+<h1 class="text-white">Contact Us</h1>
+<p class="text-white">The perfect choice for your next project</p>
+</div>
+</div>
+
+
+
+
+<div style="background-color:#f3f3f3;">
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row py-3">
+				<div class="col-md-4 d-flex align-items-center">
+					<a href="https://goo.gl/maps/NdAGeFRsf4VDDtBn7"><i class="fa fa-location-arrow fa-icon"></i></a>
+				</div>
+				<div class="col-md-8">
+					<h5>Address :</h5>
+					<p> Survey No. 121, Near Kalsekar Hospital & College, Kausa, Mumbra, Thane – 400612</p>
+				</div>
+			</div>
+			<div class="row py-3">
+				<div class="col-md-4 d-flex align-items-center">
+				<a href="tel:+918104537679"><i class="fa fa-phone fa-icon"></i></a>
+				</div>
+				<div class="col-md-8">
+				<h5>Phone no :</h5>
+				
+						<p style="margin-bottom:0px!important">7208646433</p>
+						<p style="margin-bottom:0px!important">9372445660</p>
+						<p style="margin-bottom:0px!important">7208277770</p>
+				</h1>
+				</div>
+			</div>
+			<div class="row py-3">
+				<div class="col-md-4 d-flex align-items-center">
+				<a href="mailto:shaikhaslame0@gmail.com"><i class="fa fa-envelope fa-icon"></i></a>
+				</div>
+				<div class="col-md-8">
+				<h5>E-mail :</h5>
+				<p class="elementor-icon-box-description">
+						shaikhaslame0@gmail.com</p>
+				</div>
+				
+					
+		</div>
+		</div>
+		<div class="col-md-6 d-flex justify-content-center">
+			<img class="w-100" src="https://i.ytimg.com/vi/Q_ZeeXajCHQ/maxresdefault.jpg" />
+		</div>
+	</div>
+		
+	</div>
+</div>
+
+
+
+<div class="container p-5">
+<div class="text-center">
+<h3>Leave us your info</h3>
+<h6>and we will get back to you</h6>
+</div>
+<div class="form-div py-5">
+<form class="border p-3">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Subject</label>
+    <input type="text" class="form-control" id="exampleFormControlInput2">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput3">Mobile Number</label>
+    <input type="text" class="form-control" id="exampleFormControlInput3">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput4">Full Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput4">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Message</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="editor1"></textarea>
+                <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+</div>
+</div>
+
+
+
+
+
+<section class="bg-dark text-white">
+	<div class="container-fluid pt-5">
+		<div class="row">
+			<div class="col-md-4 text-center border-right">
+				<img src="logo.png" class="w-50 my-3">
+				<h5>AL Mantasha Realty Brings Together a Team of Qualified Professionals in the Field of Management And Engineering.</h5>
+			</div>
+			<div class="col-md-4 border-right">
+				<div class='px-4'>
+					<h3 class="pb-3">Quick Links</h3>
+					<h5><a href="index.html">HOME</a></h5>
+					<h5><a href="About.html">About Us</a></h5>
+					<h5><a href="projects.html">Our Projects</a></h5>
+					<h5><a href="Contactus.html">Contact Us</a></h5>
+	
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class='px-3'>
+					<h3 class="pb-3">Keep In Touch</h3>
+					<h6 class="mb-3"><a href="https://goo.gl/maps/NdAGeFRsf4VDDtBn7"><i class="fa fa-location-arrow mr-3"></i></a>AL Mantasha Realty, Plot No. 102, At Kalsekar College Gate, Opposite Fatima Palace Building, Kausa, Mumbra Thane – 400612.</h6>
+					<h6 class="mb-3"><a href="tel:+918104537679"><i class="fa fa-phone mr-3"></i></a>+91 8104537679</h6>
+					<h6><a href="mailto:shaikhaslame0@gmail.com"><i class="fa fa-envelope mr-3"></i></a>shaikhaslame0@gmail.com</h6>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 py-3 text-right">
+			<span class="px-2">
+				<a href="https://www.facebook.com/profile.php?id=100013134098896"><img src="facebook.png"></a>
+			</span>
+			<span class="px-2">
+				<a href="https://www.instagram.com/aslamshaikh_official_2201/"><img src="instagram.png"></a>
+			</span>
+			<span class="px-2">
+				<a href="Https://wa.me/918104537679"><img src="whatsapp.png"></a>
+			</span>
+		</div>
+	</div>
+</section>	
+
+
+<div class="modal fade" id="mymodel" tabindex="-1">
+					  <div class="modal-dialog modal-sm">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<h4 class="modal-title">Youre Host</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+						  </div>
+						  <div class="modal-body">
+							<div class="row">
+							<div class="col-md-12 form-group">
+							<i class="fa fa-user"></i> <label>Username</label>
+							<input type="text" class="form-control mb-2" placeholder="Name">
+							<i class="fa fa-phone"></i> <label>Phone No.</label>
+							<input type="number" class="form-control mb-2" placeholder="Mobile No.">
+							<i class="fa fa-envelope"></i> <label>Email Address</label>
+							<input type="text" class="form-control mb-2" placeholder="Email Id">
+							<div class="d-flex justify-content-left">
+							<svg style="width:20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M336 0h-288c-26.51 0-48 21.49-48 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48v-416C384 21.49 362.5 0 336 0zM192 128c35.35 0 64 28.65 64 64s-28.65 64-64 64S128 227.3 128 192S156.7 128 192 128zM288 384H96c-8.836 0-16-7.164-16-16C80 323.8 115.8 288 160 288h64c44.18 0 80 35.82 80 80C304 376.8 296.8 384 288 384z"/></svg>
+                             <!--<i class="fa fa-user" style="font-size:90px; background-color:#3b5998; padding:20px"></i>-->
+							 </div>
+							 <label>Upload Photo</label>
+							 <input type="file" class="form-control border-0">
+							</div>
+							</div>
+						  </div>
+						  <div class="modal-footer justify-content-left">
+							<button type="button" class="btn btn-success">Submit</button>
+						  </div>
+						</div>
+					  </div>
+					 </div>
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+var mytextbox2 = document.getElementById('citytext2');
+    var mydropdown2 = document.getElementById('citydrop2');
+
+    mydropdown2.onchange = function(){
+          mytextbox2.value = this.value; 
+    }
+	
+	
+	var mytextbox = document.getElementById('citytext');
+    var mydropdown = document.getElementById('citydrop');
+
+    mydropdown.onchange = function(){
+          mytextbox.value = this.value; 
+    }
+</script>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+   
+  </body>
+</html>
